@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import {observer} from "mobx-react";
-import './Books.css';
-// import { observer } from "mobx-react-lite";
+import '../styles.css';
 import booksController from "./Books.ctrl";
 
 
@@ -28,20 +27,20 @@ const Books: React.FC = observer(() => {
 				</div>
 
 				<div className="books-buttons">
-				<button
-						onClick={() => {
-							const name = prompt("Enter book name:");
-							const author = prompt("Enter author name:");
-							if (name && author) booksController.addBook(name, author);
-						}}
-				>
-					Add Book
-				</button>
-				<button onClick={() => {
-					booksController.deleteBook();
-				}}>
-					delete books
-				</button>
+					<button
+							onClick={() => {
+								const name = prompt("Enter book name:");
+								const author = prompt("Enter author name:");
+								if (name && author) booksController.addBook(name, author);
+							}}
+					>
+						Add Book
+					</button>
+					<button onClick={() => {
+						booksController.deleteBook();
+					}}>
+						delete books
+					</button>
 				</div>
 
 			</div>
